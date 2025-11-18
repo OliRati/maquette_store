@@ -1,6 +1,24 @@
 import '../css/style.css'
 import { menuContent } from '../js/menuContent.js'
 
+//
+// Embla carousel
+//
+
+import EmblaCarousel from 'embla-carousel';
+import Autoplay from 'embla-carousel-autoplay';
+
+const emblaNode = document.querySelector('.embla');
+const options = { loop: false };
+const plugins = [Autoplay()];
+const emblaApi = EmblaCarousel(emblaNode, options, plugins);
+
+console.log(emblaApi.slideNodes()) // Access API
+
+//
+// Menu creation from tab
+//
+
 const menu = document.querySelector('.menu');
 
 const ul = document.createElement('ul');
