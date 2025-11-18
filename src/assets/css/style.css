@@ -88,6 +88,26 @@ body {
   margin-left: 1.5rem;
 }
 
+.menuItem:hover,
+.submenuItem>li:hover { 
+  background-color: #AAAAAA;
+  color: black;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.closeSubMenu {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.3s;
+}
+
+.openSubMenu {
+  transform: scaleY(100%);
+  transform-origin: top;
+  transition: all 0.3s;
+}
+
 /*
  * Here start CSS for Shop section
  */

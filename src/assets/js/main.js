@@ -24,26 +24,48 @@ const menu = document.querySelector('.menu');
 const ul = document.createElement('ul');
 
 menuContent.forEach((item) => {
-  const li = document.createElement('li');
-  li.classList.add('menuItem');
-  li.innerText = item.title;
+  const div = document.createElement('div');
+  div.classList.add('menuItem');
+  div.innerText = item.title;
+  menu.append(div);
 
   if (item.subMenu.length > 0) {
-    const innerDiv = document.createElement('div');
-    innerDiv.classList.add('submenuItem');
+    const ul = document.createElement('ul');
+    ul.classList.add('submenuItem');
 
-    const innerUl = document.createElement('ul');
     item.subMenu.forEach((item) => {
-      const innerLi = document.createElement('li');
-      innerLi.innerText = item.title;
-      innerUl.append(innerLi);
+      const li = document.createElement('li');
+      li.innerText = item.title;
+      ul.append(li);
     });
 
-    innerDiv.append(innerUl);
-    li.append(innerDiv);
-  };
+    menu.append(ul);
 
-  ul.append(li);
+    div.addEventListener('click', () => {
+      console.log('Menu Clicked ' + item.title);
+
+      let opening = ul.style.display === 'none';
+
+      ul.style.display === 'block';
+
+      if (opening) {
+        ul.classList.add('openSubMenu');
+      } else {
+        ul.classList.add('closeSubMenu');
+      }
+
+      setTimeout(() => {
+        if (opening) {
+          ul.style.display = 'block';
+          ul.classList.remove('openSubMenu');
+        } else {
+          ul.style.display = 'none';
+          ul.classList.remove('closeSubMenu');
+        }
+      }, 300);
+
+    });
+  };
 });
 
 menu.append(ul);
