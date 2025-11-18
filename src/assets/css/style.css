@@ -1,0 +1,450 @@
+@import url('./reset.css');
+
+@font-face {
+  font-family: 'roboto';
+  src: url('../font/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url('../font/Montserrat-Regular.ttf');
+}
+
+* {
+  font-family: 'montserrat';
+}
+
+:root {
+  --color_button: rgb(0, 0, 0);
+  --color_button_text: rgb(255, 255, 255);
+  --color-text: rgb(255, 255, 255);
+  --color-submit: #f34334;
+  --font-titles: 'roboto';
+}
+
+body {
+  background-color: #999;
+}
+
+#container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+ * Here start Menu CSS
+ */
+
+.menuContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color_button);
+  color: var(--color_button_text);
+  padding: 0.5rem 3%;
+
+  div:first-child {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.menuContainerFullscreen {
+  height: 100vh;
+}
+
+
+#hamburger,
+#logo {
+  font-size: 2.5rem;
+}
+
+#logo {
+  font-family: var(--font-titles);
+  font-weight: 900;
+}
+
+.menu {
+  display: none;
+}
+
+.showMenu {
+  display: block;
+  width: 100%;
+}
+
+.menuItem {
+  color: #AAAAAA;
+}
+
+.submenuItem {
+  margin-left: 1.5rem;
+}
+
+/*
+ * Here start CSS for Shop section
+ */
+
+#shopContainer {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#shopHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+
+  div:nth-child(1) {
+    font-size: 2rem;
+  }
+
+  div:nth-child(2) {
+    font-size: 1.4rem;
+  }
+}
+
+#slider {
+  position: relative;
+  width: 100%;
+}
+
+#sliderText {
+  position: absolute;
+  top: 2.2rem;
+  left: 2rem;
+
+  h2,
+  p {
+    font-family: var(--font-titles);
+    font-weight: 300;
+    color: var(--color-text);
+  }
+
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+}
+
+#button {
+  display: inline-block;
+  background-color: var(--color_button);
+  color: var(--color_button_text);
+  padding: 0.5rem 1rem;
+}
+
+#filler {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+/*
+ * Here began articles
+ */
+
+#articlesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .articleCard {
+    position: relative;
+    width: 48.5%;
+    margin-bottom: 1.5rem;
+
+    .cardDescription {
+      margin-top: 1rem;
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+
+    .cardPrice {
+      font-weight: 500;
+      font-size: 1.4rem;
+    }
+
+    .cardOverlay {
+      position: absolute;
+      top: 0;
+      font-family: var(--font-titles);
+      background-color: var(--color_button);
+      color: var(--color_button_text);
+      padding: 0.3rem 0.8rem;
+    }
+  }
+}
+
+/*
+ * Subscribe form CSS
+ */
+
+#subscribe {
+  margin-top: 2rem;
+  background-color: var(--color_button);
+  width: 100%;
+  color: var(--color_button_text);
+  padding: 1rem;
+
+  h2 {
+    font-family: var(--font-titles);
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  form {
+    #formEmail {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.3rem;
+    }
+
+    #formSubmit {
+      font-family: var(--font-titles);
+      background-color: var(--color-submit);
+      font-size: 1.5rem;
+      padding: 1.4rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/*
+ * Footer CSS
+ */
+
+#footerContainer {
+  width: 100%;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 4rem 0;
+}
+
+/* Contact part */
+
+#footerContact {
+  width: 100%;
+  padding: 0 1rem;
+
+  h2 {
+    text-align: center;
+    font-family: var(--font-titles);
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.3rem 0;
+    font-size: 1.2rem;
+  }
+
+  #contactSubmit {
+    background-color: var(--color_button);
+    color: var(--color_button_text);
+    font-size: 1.6rem;
+  }
+}
+
+/* Menu part */
+
+#footerMenu {
+  width: 50%;
+
+  h2 {
+    text-align: center;
+    font-family: var(--font-titles);
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  li {
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: underline;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Store part */
+
+#footerStore {
+  width: 50%;
+
+  h2 {
+    font-family: var(--font-titles);
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  li {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+
+    i {
+      margin-right: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  #footerSocials {
+    text-align: center;
+    margin-top: 1.5rem;
+
+    i {
+      margin-right: 0;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: var(--color_button);
+  color: var(--color_button_text);
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+
+  p {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+/*
+ * Here start Responsiveness tricks
+ */
+
+@media screen and (min-width: 576px) {
+  #container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .menuContainer {
+    display: block;
+    width: 20%;
+    color: var(--color_button);
+    background-color: unset;
+    padding: 0 1rem;
+    padding-top: 1rem;
+  }
+
+  #logo {
+    margin-bottom: 6rem;
+  }
+
+  .menu,
+  .showMenu {
+    display: block;
+  }
+
+  .menuContainerFullscreen {
+    height: unset;
+  }
+
+  .menuItem {
+    color: #333333;
+  }
+
+  .submenuItem {
+    margin-left: 1.5rem;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  #shopContainer {
+    width: 75%
+  }
+
+  #sliderText {
+    top: 2rem;
+    left: 2rem;
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  #button {
+    text-transform: uppercase;
+  }
+
+  #articlesContainer {
+    .articleCard {
+      width: 24%;
+    }
+  }
+
+  #footerContainer {
+    flex-direction: row;
+  }
+
+  #footerContact {
+    width: 40%;
+  }
+
+  #footerMenu,
+  #footerStore {
+    width: 30%;
+  }
+
+  #footerStore {
+
+    h2,
+    li {
+      text-align: left;
+    }
+
+    li {
+      span {
+        display: inline;
+      }
+    }
+
+    #footerSocials {
+      text-align: left;
+    }
+  }
+
+}
