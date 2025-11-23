@@ -47,16 +47,18 @@ menuContent.forEach((item) => {
       let opening = ul.style.display === 'none';
 
       ul.style.display === 'block';
-
+      
       if (opening) {
         ul.classList.add('openSubMenu');
       } else {
         ul.classList.add('closeSubMenu');
       }
 
+      // Div needs to be visible in order the animation could be seen
+      ul.style.display = 'block';
+
       setTimeout(() => {
         if (opening) {
-          ul.style.display = 'block';
           ul.classList.remove('openSubMenu');
         } else {
           ul.style.display = 'none';
