@@ -25,8 +25,17 @@ const ul = document.createElement('ul');
 
 menuContent.forEach((item) => {
   const div = document.createElement('div');
+  let caret;
+
   div.classList.add('menuItem');
   div.innerText = item.title;
+
+  if (item.subMenu && item.subMenu.length) {
+    caret = document.createElement('i');
+    caret.classList.add('fa-solid', 'fa-caret-up');
+    div.append(caret);
+  }
+
   menu.append(div);
 
   if (item.subMenu.length > 0) {
@@ -47,11 +56,15 @@ menuContent.forEach((item) => {
       let opening = ul.style.display === 'none';
 
       ul.style.display === 'block';
-      
+
       if (opening) {
         ul.classList.add('openSubMenu');
+        caret.classList.remove('fa-caret-down');
+        caret.classList.add('fa-caret-up');
       } else {
         ul.classList.add('closeSubMenu');
+        caret.classList.remove('fa-caret-up');
+        caret.classList.add('fa-caret-down');
       }
 
       // Div needs to be visible in order the animation could be seen

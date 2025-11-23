@@ -49,7 +49,7 @@ body {
   color: var(--color_button_text);
   padding: 0.5rem 3%;
 
-  div:first-child {
+  .logo-hamburger {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -89,7 +89,7 @@ body {
 }
 
 .menuItem:hover,
-.submenuItem>li:hover { 
+.submenuItem>li:hover {
   background-color: #AAAAAA;
   color: black;
   transition: all 0.3s;
@@ -101,6 +101,7 @@ body {
     height: fit-content;
     transform: scaleY(1);
   }
+
   100% {
     height: 0;
     transform: scaleY(0);
@@ -112,6 +113,7 @@ body {
     height: 0;
     transform: scaleY(0);
   }
+
   100% {
     height: fit-content;
     transform: scaleY(1);
