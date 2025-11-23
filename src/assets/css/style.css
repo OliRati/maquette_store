@@ -41,7 +41,6 @@ body {
 
 .menuContainer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   width: 100%;
@@ -78,6 +77,7 @@ body {
 .showMenu {
   display: block;
   width: 100%;
+  margin-top: 1rem;
 }
 
 .menuItem {
@@ -432,6 +432,10 @@ footer {
   .menu,
   .showMenu {
     display: block;
+  }
+
+  .showMenu {
+    margin-top: unset;
   }
 
   .menuContainerFullscreen {
